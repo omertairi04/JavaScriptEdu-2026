@@ -1,76 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>Followers: <span id="followers"></span></h1>
-  <button onclick="follow()">Follow</button>
-</body>
-<script>
-  let fllamasteri = "Kalter"
-  const pi = 3.14;
-  const emri = "Omer";
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Followers: <span id="followers"></span></h1>
+    <button onclick="follow()">Follow</button>
+  </body>
+  <script>
+    let fllamasteri = "Kalter";
+    const pi = 3.14;
+    const emri = "Omer";
 
-  let vjet = 21;
+    let vjet = 21;
+    
+    let cf = 0;
 
-  // console.log("Vitet tash: ", vjet);
+    const follow = () => {
+      const followers = document.getElementById("followers")
+      followers.textContent = cf + 1;
+      cf += 1;
+    }
 
-  // Menyra 1: vjet = vjet + 1;
-  // Menyra 2: vjet += 5;
-  // Menyra 3: vjet++;
+    // console.log("Vitet tash: ", vjet);
 
-  // console.log("Vitet mas ni vjeti: ", vjet);
-  
-  // let landet = 7;
+    // Menyra 1: vjet = vjet + 1;
+    // Menyra 2: vjet += 5;
+    // Menyra 3: vjet++;
 
-  // console.log("Landet tash: " , landet);
-  
-  // Menyra 1: landet = landet - 3;
-  // Menyra 2: landet -= 3;
-  // Menyra 3: landet--;
-  // let rezultati = landet - 5;
-  // console.log("Landet mas ni semestri: " , rezultati);
+    // console.log("Vitet mas ni vjeti: ", vjet);
 
-  // let nxenesitBazatEUebit; // camelCase
+    // let landet = 7;
 
-  // let numriKerraveCaircankOr = 200;
-  
-  // console.log("numri kerrave oren e par: ", numriKerraveCaircankOr);
+    // console.log("Landet tash: " , landet);
 
-  // 1: numriKerraveCaircankOr = numriKerraveCaircankOr * 5;
-  // 2: numriKerraveCaircankOr *= 5;
+    // Menyra 1: landet = landet - 3;
+    // Menyra 2: landet -= 3;
+    // Menyra 3: landet--;
+    // let rezultati = landet - 5;
+    // console.log("Landet mas ni semestri: " , rezultati);
 
-  // console.log("numri kerrave oren e 5: ", numriKerraveCaircankOr);
-  
-  // let numriINxensveKumanov = 12000
+    // let nxenesitBazatEUebit; // camelCase
 
-  // console.log("Numri i nxansve fillester: ", numriINxensveKumanov);
+    // let numriKerraveCaircankOr = 200;
 
-  //1: numriINxensveKumanov = numriINxensveKumanov / 3;
-  // numriINxensveKumanov /= 3;
-  // console.log("Numri i nxansve mas 3 vjete: ", numriINxensveKumanov);
+    // console.log("numri kerrave oren e par: ", numriKerraveCaircankOr);
 
-  // let numri = 3;
-  // numri = numri - 1;
-  // numri+=1;
-  // numri++;
+    // 1: numriKerraveCaircankOr = numriKerraveCaircankOr * 5;
+    // 2: numriKerraveCaircankOr *= 5;
 
-  let x = 1;
-  let y = 2;
+    // console.log("numri kerrave oren e 5: ", numriKerraveCaircankOr);
 
-  const mbledhje = x + y;
-  
-  const zbritje = x - y;
+    // let numriINxensveKumanov = 12000
 
-  const shumzim = x * y;
-  
-  const pjestim = x / y;
+    // console.log("Numri i nxansve fillester: ", numriINxensveKumanov);
 
+    //1: numriINxensveKumanov = numriINxensveKumanov / 3;
+    // numriINxensveKumanov /= 3;
+    // console.log("Numri i nxansve mas 3 vjete: ", numriINxensveKumanov);
 
+    // let numri = 3;
+    // numri = numri - 1;
+    // numri+=1;
+    // numri++;
 
+    let x = 1;
+    let y = 2;
 
-</script>
+    const mbledhje = x + y;
+
+    const zbritje = x - y;
+
+    const shumzim = x * y;
+
+    const pjestim = x / y;
+
+    // let adapteri = 67;
+
+    // console.log(adapteri + 1); // 68
+
+    // adapteri = adapteri + 5;
+
+    // console.log(adapteri); 
+
+    // adapteri = adapteri - 10;
+
+    // console.log(adapteri);
+
+    // adapteri = adapteri * 100;
+
+    // console.log(adapteri);
+    
+    // adapteri = adapteri / 20;
+
+    // console.log(adapteri);
+
+    let rroga = 600;
+    let numriPuntorve = 20;
+
+    let rrogaMujore = rroga * numriPuntorve;
+
+    console.log("Rroga Mujore: ", rrogaMujore);
+    
+    
+    
+  </script>
 </html>
