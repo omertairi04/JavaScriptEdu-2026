@@ -7,7 +7,7 @@
   </head>
   <body></body>
   <script>
-    const piktETestit = prompt("Vendosni piket e testit");
+    // const piktETestit = prompt("Vendosni piket e testit");
 
     // 1 = 0 -> 25
     // 2 = 26 -> 40
@@ -19,16 +19,36 @@
     // OSE = ||
     // JO = !
 
-    if (piktETestit >= 0 && piktETestit <= 25) {
-      alert("NOTA 1");
-    } else if (piktETestit >= 26 && piktETestit <= 40) {
-      alert("NOTA 2");
-    } else if (piktETestit >= 41 && piktETestit <= 60) {
-      alert("NOTA 3");
-    } else if (piktETestit >= 61 && piktETestit <= 80) {
-      alert("NOTA 4");
-    } else {
-      alert("NOTA 5");
+    // if (piktETestit >= 0 && piktETestit <= 25 || piktETestit < 80) {
+    //   alert("NOTA 1");
+    // } else if (piktETestit >= 26 && piktETestit <= 40) {
+    //   alert("NOTA 2");
+    // } else if (piktETestit >= 41 && piktETestit <= 60) {
+    //   alert("NOTA 3");
+    // } else if (piktETestit >= 61 && piktETestit <= 80) {
+    //   alert("NOTA 4");
+    // } else {
+    //   alert("NOTA 5");
+    // }
+
+    // let majmOr = true;
+
+    // if (majmOr) {
+    //   alert("Jemi duke majtur or!");
+    // } else {
+    //   alert("Nuk jemi tu majt or!");
+    // }
+
+    const temperatura = 30;
+    const dukeRaShi = false;
+
+    if (temperatura > 30 && dukeRaShi === false) {
+      alert("Vesh shorce");
+    } else if (temperatura < 15 || dukeRaShi === true) {
+      alert("Vesh jakne");
+    }
+    if (dukeRaShi === true) {
+      alert("Mer umbrell");
     }
   </script>
 </html>
