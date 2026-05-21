@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const emri = "Omer";
+
+    let vlerat = [9, 5.05, "Tekst", emri, false];
+
+    let array = []; // 2 , 3 , 4 , 5 ,6 ,7 ,8
+
+    for (let i = 2; i <= 10; i++) {
+      array.push(i);
+    }
+
+    array[4] = null;
+    array.pop();
+    array.pop();
+    for (let i = 0; i < array.length; i++) {
+      console.log(array[i]);
+    }
+
+    let flags = [true, false, false, true, false, false, false];
+
+    // let flagsCorrect = [];
+
+    for (let i = 0; i < flags.length; i++) {
+      // console.log(flags[i]);
+
+      flags[i] = true;
+    }
+    console.log(flags);
+
+    let numrat = [10, 20, -5, 4, -6, -2, 8];
+
+    let rezultati = 0;
+
+    let string = "";
+    for (let i = 0; i < numrat.length; i++) {
+      rezultati += numrat[i];
+      // 10 + 20 + -5 + 4 + -6 + -2 + 8
+
+      string += numrat[i] + " + ";
+      // 10 +
+      // 20 +
+      // -5 +
+      // ...
+      // 8 +
+    }
+
+    string += " = " + rezultati;
+    console.log(string);
+  </script>
+</html>
