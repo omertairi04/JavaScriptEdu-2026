@@ -8,40 +8,39 @@
   <body></body>
   <script>
 
-    // let canta = ["Fletore", "Laps", "Flet", "Llaptop"];
+    let canta = ["Fletore", "Laps", "Flet", "Llaptop"];
 
-    // console.log(canta[0]);
+    console.log(canta[0]);
 
-    // canta.push("Syzet");
+    canta.push("Syzet");
 
-    // console.log("LENGTH: " + canta.length);
+    console.log("LENGTH: " + canta.length);
 
-    // for (let c = 0; c < canta.length; c++) {
-    //   console.log(c + " " + canta[c]);
-    // }
+    for (let c = 0; c < canta.length; c++) {
+      console.log(c + " " + canta[c]);
+    }
 
-    // let numrat = [2, -4, 1, 5, 9, -13, -8, 12];
-    // let shuma = 0;
-    // let zbritja = 0;
+    let shuma = 0;
+    let zbritja = 0;
 
-    // for (let i = 0; i < numrat.length; i++) {
-    //   if (numrat[i] % 2 !== 0) {
-    //     zbritja -= numrat[i];
-    //   }
-    // }
+    for (let i = 0; i < numrat.length; i++) {
+      if (numrat[i] % 2 !== 0) {
+        zbritja -= numrat[i];
+      }
+    }
 
-    // console.log(zbritja);
+    console.log(zbritja);
+
 
     let numrat = [2, -4, 1, 5, 9, -13, -8, 12];
+    
     let maksimumi = numrat[0];
+    
+    numrat[3] = 6;
     
 
     for (let i=0;i<numrat.length; i++) {
-
-      if (numrat[i] > maksimumi) {
-        maksimumi = numrat[i];
-      }
-
+      console.log(numrat[i]);
     }
 
     console.log(maksimumi);
