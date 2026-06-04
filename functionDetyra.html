@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // let numri1 = prompt("Shkruaj nr 1");
+      // let operacioni = prompt("Jep operacionin (+, -, /, *)");
+      // let numri2 = prompt("Shkruaj nr 2");
+
+      // numri1 = parseFloat(numri1);
+      // numri2 = parseFloat(numri2);
+
+      function zbritja(vlera1, operacioni, vlera2) {
+        if (operacioni === "+") {
+          console.log(vlera1 + vlera2);
+        } else if (operacioni === "-") {
+          console.log(vlera1 - vlera2);
+        } else if (operacioni === "/") {
+          console.log(vlera1 / vlera2);
+        } else {
+          console.log(vlera1 * vlera2);
+        }
+      }
+
+      // zbritja(numri1,operacioni ,numri2);
+
+      function palindrom(teksti) {
+        let vazhdo = true;
+
+        for (let i = 0; i < teksti.length; i++) {
+          if (teksti[i] !== teksti[teksti.length - 1 - i]) {
+            vazhdo = false;
+          }
+        }
+
+        if (vazhdo === false) {
+          console.log("Nuk esht palindrom");
+        } else {
+          console.log("Esht palindrom");
+        }
+      }
+
+      palindrom("talat");
+      palindrom("2321");
+      palindrom("4321");
+
+      let emri = prompt("shkruj emrin")
+
+      function pershendet(emri) {
+        console.log("Përshëndetje, " + emri);
+      }
+
+      pershendet(emri);
+
+
+    </script>
+  </body>
+</html>
