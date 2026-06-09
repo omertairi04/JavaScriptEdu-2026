@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let llaptopi = {
+        brendi: "HP",
+        modeli: "Elitebook",
+        ngjyra: "E perhimt",
+        baterija: 100,
+
+        perdore: function () {
+          console.log("Duke perdorur");
+          if (this.baterija <= 0) {
+            console.log("Mbushe me rrym");
+          } else {
+            this.baterija -= 25;
+            console.log(
+              "Mbaruat me perdorimin , ngelet edhe " + this.baterija + "%",
+            );
+          }
+        },
+      };
+
+      // console.log(
+      //   llaptopi.brendi + " " + llaptopi.modeli + " - " + llaptopi.ngjyra,
+      // );
+
+      // llaptopi.perdore();
+      // llaptopi.perdore();
+      // llaptopi.perdore();
+      // llaptopi.perdore();
+      // llaptopi.perdore();
+
+      function Llaptop(brendi, modeli, madhsija) {
+        // this.brendi = brendi;
+        this.emriFirmes = brendi;
+        this.modeli = modeli;
+        this.madhsija = madhsija;
+        this.baterija = 100;
+
+        this.info = function () {
+          console.log(
+            this.emriFirmes +
+              " " +
+              this.modeli +
+              " - " +
+              this.madhsija +
+              " - " +
+              this.baterija +
+              "%",
+          );
+        };
+        this.perdore = function () {
+          console.log("Duke perdorur");
+          if (this.baterija <= 0) {
+            console.log("Mbushe me rrym");
+          } else {
+            this.baterija -= 25;
+            console.log(
+              "Mbaruat me perdorimin , ngelet edhe " + this.baterija + "%",
+            );
+          }
+        };
+      }
+
+      let durimL = new Llaptop("Durim", "D001", "100cm x 120cm");
+      let rinorL = new Llaptop("Rinor", "Shkupi93", "120cm x 160cm");
+
+      durimL.info();
+      rinorL.info();
+
+      durimL.perdore();
+      durimL.perdore();
+      durimL.perdore();
+      durimL.info();
+    </script>
+  </body>
+</html>

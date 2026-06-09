@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function InstagramUser(username, password, fullName, description) {
+        this.username = username;
+        this.password = password;
+        this.fullName = fullName;
+        this.description = description;
+
+        this.followers = 0;
+        this.following = 0;
+        this.post = 0;
+        this.likes = 0;
+
+        this.follow = function () {
+          following += 1;
+        };
+
+        this.followed = function () {
+          followers += 1;
+        };
+      }
+
+      let omer = new InstagramUser(
+        "omer12",
+        "omer232",
+        "Omer Tairi",
+        "Student @ Finki",
+      );
+      let tairi = new InstagramUser(
+        "tairi",
+        "kumanova123",
+        "Tairi Omer",
+        "Developer @ Univers Group",
+      );
+    </script>
+  </body>
+</html>

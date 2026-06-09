@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Bottle(color, brand, madhsija) {
+        this.color = color;
+        this.brand = brand;
+        this.madhsija = madhsija;
+        this.contentPercentage = 0;
+
+        this.tregoInfo = function () {
+          console.log(
+            "Bottle Information: " +
+              this.color +
+              " - " +
+              this.brand +
+              " - " +
+              this.madhsija +
+              " - " +
+              this.contentPercentage +
+              "%",
+          );
+        };
+      }
+
+      let OmersBottle = new Bottle("kaltert", "No Name", "20 x 40");
+      let TairisBottle = new Bottle("e zez", "Stanley", "60 x 80");
+
+      OmersBottle.tregoInfo();
+      console.log("----------------------");
+      TairisBottle.tregoInfo();
+
+    </script>
+  </body>
+</html>

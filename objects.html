@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let bottle = {
+        color: "E kalter",
+        brand: "No NAME",
+        madhsija: "20cm x 40cm",
+        contentPercentage: 100,
+
+        pijUje: function () {
+          console.log("Perqindja e ujit eshte " + this.contentPercentage);
+          if (this.contentPercentage <= 0) {
+            console.log("Duhesh ta mbushesh shishen me uj!");
+          } else {
+            console.log("Duke pire uje!");
+            this.contentPercentage -= 20;
+            console.log("Mbetet edhe " + this.contentPercentage);
+          }
+        },
+
+        mbushMeUj: function () {
+          console.log("Perqindja e ujit " + this.contentPercentage);
+          if (this.contentPercentage >= 100) {
+            console.log("Nuk ka me shum vend");
+          } else {
+            this.contentPercentage += 20;
+            console.log("% tash " + this.contentPercentage);
+          }
+        },
+      };
+
+      let laptop = {
+        color: "gray",
+        brand: "acer",
+        model: "aspire3",
+      };
+
+      console.log(
+        "Bottle Information: " +
+          bottle.color +
+          " - " +
+          bottle.brand +
+          " - " +
+          bottle.madhsija,
+      );
+
+      bottle.pijUje();
+      console.log("--------------------");
+
+      bottle.pijUje();
+      console.log("--------------------");
+
+      bottle.pijUje();
+      console.log("--------------------");
+
+      bottle.pijUje();
+      console.log("--------------------");
+
+      bottle.pijUje();
+      console.log("--------------------");
+
+      bottle.pijUje();
+      console.log("--------------------");
+
+      bottle.mbushMeUj();
+      console.log("--------------------");
+
+      bottle.mbushMeUj();
+      console.log("--------------------");
+
+      bottle.mbushMeUj();
+      console.log("--------------------");
+
+      bottle.mbushMeUj();
+      console.log("--------------------");
+
+      bottle.mbushMeUj();
+      console.log("--------------------");
+
+      bottle.mbushMeUj();
+      console.log("--------------------");
+
+      bottle.mbushMeUj();
+      console.log("--------------------");
+
+      bottle.mbushMeUj();
+      console.log("--------------------");
+
+      bottle.mbushMeUj();
+      console.log("--------------------");
+
+
+
+      
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
