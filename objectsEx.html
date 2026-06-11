@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Llaptop(firma, ngjyra, modeli, displayInch, processori) {
+        this.firma = firma;
+        this.ngjyra = ngjyra;
+        this.modeli = modeli;
+        this.displayInch = displayInch;
+        this.processori = processori;
+        this.ioDevices = [];
+
+        this.toString = function () {
+          return `Firma: ${this.firma} - ${this.modeli} me ngjyr ${this.ngjyra} - ${this.displayInch}inch (${this.processori})`;
+        };
+
+        this.vendosDevice = function (pajisja) {
+          this.ioDevices.push(pajisja);
+        };
+
+        this.tregoDevices = function () {
+          for (let i=0;i<this.ioDevices.length;i++) {
+            console.log(this.ioDevices[i]);
+          }
+        }
+      }
+
+      let omerLlaptop = new Llaptop("Acer", "E perhimt", "A3", 15.1, "AMD");
+      let rinorLlaptop = new Llaptop("Macbook", "E zez", "Pro", 15, "M5");
+
+      // console.log(omerLlaptop.toString());
+      // console.log(rinorLlaptop.toString());
+
+      omerLlaptop.vendosDevice("maus");
+      omerLlaptop.vendosDevice("TV");
+
+      omerLlaptop.tregoDevices();
+
+      rinorLlaptop.tregoDevices();
+
+
+      /* 
+      User (username, fullName, bio) {
+        username = username
+        fullName = fullName
+        bio = bio
+        followers and following empty array
+      }
+      */ 
+    </script>
+  </body>
+</html>
