@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function Person(emer, mbiemer, vitet) {
+      this.emer = emer;
+      this.mbiemer = mbiemer;
+      this.vitet = vitet;
+      this.shoket = [];
+      this.bff = [];
+
+      this.fullName = function () {
+        return this.emer + " " + this.mbiemer;
+      };
+
+      this.shoqerohu = function (person) {
+        this.shoket.push(person);
+      };
+
+      this.shfaqShoket = function () {
+        for (let i = 0; i < this.shoket.length; i++) {
+          console.log(this.shoket[i].fullName());
+        }
+      };
+
+      this.idhnohu = function (personi) {
+        let shoktERi = [];
+        for (let i = 0; i < this.shoket.length; i++) {
+          if (this.shoket[i] !== personi) {
+            shoktERi.push(this.shoket[i]);
+          }
+        }
+
+        this.shoket = shoktERi;
+      };
+
+      this.bejeBFF = function (shoki) {
+        let shok = this.shoket.find((e) => e === shoki);
+        
+        if (shok === null || shok === undefined) {
+          console.log(
+            "Nuk mund ta besh " + shoki.fullName() + " shok te ngusht",
+          );
+          reshokiturn;
+        }
+
+        this.bff.push();
+      };
+
+      this.bffs = function () {
+        for (let i = 0; i < this.bff.length; i++) {
+          console.log("BFF: " + this.bff[i].fullName());
+        }
+      };
+    }
+
+    let omer = new Person("Omer", "Tairi", 21);
+
+    let malik = new Person("AbdulMalik", "Asani", 13);
+    let amar = new Person("Amar", "Izairi", 13);
+    let hadis = new Person("Hadis", "Lura", 15);
+    let durim = new Person("Durim", "Fera", 15);
+    let x = new Person("Filan", "Fisteki", 29);
+    omer.shoqerohu(malik);
+    omer.shoqerohu(amar);
+    omer.shoqerohu(x);
+    omer.shoqerohu(hadis);
+    omer.shoqerohu(durim);
+
+    omer.shfaqShoket();
+
+    console.log("--------------PAS IDHNIMIT--------------");
+
+    // MAS IDHNIMIT
+    omer.idhnohu(x);
+
+    omer.shfaqShoket();
+
+    omer.bejeBFF(x);
+    omer.bejeBFF(malik);
+    omer.bffs();
+  </script>
+</html>
