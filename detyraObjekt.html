@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function Rental(emer, adres) {
+      this.emer = emer;
+      this.adres = adres;
+      this.veturat = [];
+
+      this.toString = function () {
+        return this.emer + " - " + this.adres + " - " + this.veturat.length;
+      };
+
+      this.shtoVetur = function (vetur) {
+        this.veturat.push(vetur);
+      };
+
+      this.shfaqGjithVeturat = function () {
+        for (let i = 0; i < this.veturat.length; i++) {
+          console.log(this.veturat[i].toString());
+        }
+      };
+
+      this.rezervoVetur = function (vetur) {
+        for (let i = 0; i < this.veturat.length; i++) {
+          if (this.veturat[i] == vetur) {
+            this.veturat[i].status = "RESERVED";
+          }
+        }
+      };
+
+      this.shfaqVeturatELira = function () {
+        for (let i = 0; i < this.veturat.length; i++) {
+          if (this.veturat[i].status === "FREE") {
+            console.log(this.veturat[i].toString());
+          }
+        }
+      };
+    }
+
+    function Vetura(brendi, modeli) {
+      this.brendi = brendi;
+      this.modeli = modeli;
+      this.status = "FREE";
+
+      this.toString = function () {
+        return this.brendi + " " + this.modeli + " - " + this.status;
+      };
+    }
+
+    bmw = new Vetura("Bmw", "M3");
+    mercedes = new Vetura("Mercedez Benz", "Cls");
+    audi = new Vetura("Audi", "A6");
+
+    rental = new Rental("Edumind Rental", "Cair,Skopje");
+    rental.shtoVetur(bmw);
+    rental.shtoVetur(mercedes);
+    rental.shtoVetur(audi);
+
+    rental.shfaqGjithVeturat();
+    
+    rental.rezervoVetur(bmw);
+    console.log("------------------");
+    rental.shfaqVeturatELira();
+    console.log("------------------");
+
+    rental.shfaqGjithVeturat();
+
+
+  </script>
+</html>
