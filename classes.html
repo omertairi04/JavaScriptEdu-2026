@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    class Person {
+      constructor(emer, rroga, vitet) {
+        this.emer = emer;
+        this.rroga = rroga;
+        this.vitet = vitet;
+      }
+
+      prezentohu() {
+        console.log("//////////////////////////");
+        console.log(`Un jam ${this.emer} dhe jam ${this.vitet} vjec`);
+      }
+    }
+
+    class Restoranti {
+      constructor(emer) {
+        this.emer = emer;
+        this.menaxherat = [];
+      }
+
+      shtoMenaxher(menaxheri) {
+        this.menaxherat.push(menaxheri);
+      }
+    }
+
+    class Menaxher extends Person {
+      constructor(emer, rroga, vitet) {
+        super(emer, rroga, vitet);
+        this.puntort = [];
+      }
+
+      shtoPuntor(puntori) {
+        this.puntort.push(puntori);
+        this.rroga += 2000;
+      }
+
+      prezentohu() {
+        super.prezentohu();
+        console.log(`Un i mbikqyri ${this.puntort.length} puntor`);
+      }
+    }
+
+    class Puntor extends Person {
+      constructor(emer, rroga, vitet) {
+        super(emer, rroga, vitet);
+        this.tavolinat = [];
+      }
+
+      shtoTavolin(tavlina) {
+        this.tavolinat.push(tavlina);
+        if (this.tavolinat.length > 5) {
+          this.rroga += 200;
+        }
+      }
+
+      prezentohu() {
+        super.prezentohu();
+        console.log(`Un i mbikqyri ${this.tavolinat.length} tavolina gjat orarit!`);
+      }
+    }
+
+    class Kuzhina {
+      constructor() {
+        this.kuzhinjerat = [];
+      }
+
+      shtoKuzhinjer(puntor) {
+        this.kuzhinjerat.push(puntor);
+        puntor.rroga = 40000;
+      }
+
+      pranoPorosi() {
+        console.log("Kuzhina pranoj porosin");
+        console.log("////////// DUKE U PERGADITUR");
+        console.log("////////// USHQIMI GATI");
+      }
+    }
+
+    const kuzhina = new Kuzhina();
+
+    class Tavolina {
+      constructor(numer) {
+        this.numri = numer;
+        this.totali = 0;
+        this.kuzhina = kuzhina;
+      }
+
+      sherbe(cmimi, eshtUshqim) {
+        this.totali += cmimi;
+        if (eshtUshqim === true) {
+          kuzhina.pranoPorosi();
+        }
+      }
+
+      bejPagesen() {
+        console.log("Tavolina #" + this.numri + " ka paguajtur " + this.totali);
+        this.totali = 0;
+      }
+    }
+
+    const eduRes = new Restoranti("EduRestorant");
+
+    const amar = new Menaxher("Amar", 43000, 17);
+    const haki = new Menaxher("Haki", 43000, 18);
+
+
+    eduRes.shtoMenaxher(amar);
+    eduRes.shtoMenaxher(haki);
+
+    const omer = new Puntor("Omer", 30000, 21);
+    const tairi = new Puntor("Tairi", 30000, 23);
+    const hadis = new Puntor("Hadis", 30000, 29);
+
+    amar.shtoPuntor(omer);
+    haki.shtoPuntor(tairi);
+
+    kuzhina.shtoKuzhinjer(hadis);
+
+    const t1 = new Tavolina("A1");
+    const t2 = new Tavolina("A2");
+    const t3 = new Tavolina("A3");
+    const t4 = new Tavolina("A4");
+    const t5 = new Tavolina("A5");
+    const t6 = new Tavolina("A6");
+    const t7 = new Tavolina("B1");
+    const t8 = new Tavolina("B2");
+    const t9 = new Tavolina("B3");
+    const t10 = new Tavolina("B1");
+    const t11 = new Tavolina("B2");
+    const t12 = new Tavolina("B3");
+
+    omer.shtoTavolin(t1);
+    omer.shtoTavolin(t2);
+    omer.shtoTavolin(t3);
+    omer.shtoTavolin(t4);
+    omer.shtoTavolin(t5);
+
+    tairi.shtoTavolin(t7);
+    tairi.shtoTavolin(t8);
+    tairi.shtoTavolin(t9);
+
+    hadis.shtoTavolin(t10);
+    hadis.shtoTavolin(t11);
+    hadis.shtoTavolin(t12);
+
+    // PJESA ME MUSHTERIT
+    t1.sherbe(400, true);
+    t1.sherbe(200, false);
+
+    t6.sherbe(300, true);
+    t1.bejPagesen();
+
+    t3.sherbe(100, false);
+
+    t6.bejPagesen();
+    t3.bejPagesen();
+
+    haki.prezentohu();
+    omer.prezentohu();
+
+  </script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+
+  class Person {
+    emer;
+    mbiemer;
+    #vitet;
+
+    constructor(emer, mbiemer, vitet) {
+      this.emer = emer;
+      this.mbiemer = mbiemer;
+      this.#vitet = vitet;
+    }
+
+    toString () {
+      return `${this.emer} ${this.mbiemer} - ${this.#vitet}`;
+    }
+
+    getVitet() {
+      return this.#vitet;
+    }
+
+    setVitet(vitetEReja) {
+      this.#vitet = vitetEReja;
+    }
+    
+  }
+
+  const p = new Person("Omer", "Tairi", 21);
+  // console.log(p.toString());
+  
+  console.log(p.emer);
+  console.log(p.getVitet());
+  
+  p.setVitet(p.getVitet() + 1);
+
+  console.log(p.getVitet());
+
+
+
+</script>
+</html>

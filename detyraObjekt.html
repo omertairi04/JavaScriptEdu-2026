@@ -53,11 +53,11 @@
       };
     }
 
-    bmw = new Vetura("Bmw", "M3");
-    mercedes = new Vetura("Mercedez Benz", "Cls");
-    audi = new Vetura("Audi", "A6");
+    const bmw = new Vetura("Bmw", "M3");
+    const mercedes = new Vetura("Mercedez Benz", "Cls");
+    const audi = new Vetura("Audi", "A6");
 
-    rental = new Rental("Edumind Rental", "Cair,Skopje");
+    const rental = new Rental("Edumind Rental", "Cair,Skopje");
     rental.shtoVetur(bmw);
     rental.shtoVetur(mercedes);
     rental.shtoVetur(audi);
@@ -70,6 +70,33 @@
     console.log("------------------");
 
     rental.shfaqGjithVeturat();
+
+
+
+    // ----------------------------
+
+    let ekipi1 = new KlubiFutbollistik("FC Barcelona", "La liga")
+    let ekipi2 = new KlubiFutbollistik("Manchester United", "Premier League")
+
+    console.log(ekipi1.toString())
+    console.log(ekipi2.toString())
+
+    let loja = new Loja(ekipi1, ekipi2)
+
+    console.log(loja.toString());
+    
+
+    loja.shtoGollNikoqir()
+    loja.shtoGollMusafir()
+    loja.shtoGollMusafir()
+    loja.shtoGollNikoqir()
+    loja.shtoGollNikoqir()
+
+    loja.mbaroLojen()
+
+
+    console.log(ekipi1.toString()) // FC Barcelona - La liga - 3
+
 
 
   </script>
