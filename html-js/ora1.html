@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  /* .intro {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: aqua;
+  } */
+</style>
+<body>
+  <!-- <h1 id="intro">Pershendetje</h1> -->
+
+  <!-- <label> Vendos emrin: 
+    <input type="text" id="emri">
+  </label>
+
+  <button onclick="submit()">Submit</button>
+
+  <h2 id="pershendetja"></h2> -->
+<!-- 
+  <div>
+    <input type="number" id="vlera1">
+    <input type="text" id="operatori">
+    <input type="number" id="vlera2">
+  </div>
+
+  <button onclick="kalkulo()">Kalkulo</button>
+
+  <h2 id="display"></h2> -->
+
+  <div>
+    <input type="text" id="username" placeholder="username">
+    <input type="text" id="password" placeholder="password">
+    <input type="text" id="confirm-password" placeholder="confirm-password">
+    <input type="text" id="ngjyra">
+  </div>
+
+  <button onclick="signup()">Regjistrohu</button>
+
+  <div>
+    <h2>Userat</h2>
+    <div id="users">
+    </div>
+  </div>
+
+</body>
+<script>
+
+  // let intro = document.getElementById("intro");
+  // intro.textContent = "Pershendetje Omer Tairi";
+
+  // intro.style.color = "red";
+
+  // intro.className = "intro";
+
+  // function submit () {
+  //   const input = document.getElementById("emri").value;
+
+  //   if (input === "" || input.length < 3) return;
+
+  //   const h2 = document.getElementById("pershendetja");
+
+  //   h2.textContent = "Pershendetje " + input;
+    
+    
+  // }
+
+  // function kalkulo() {
+    // const v1 = parseInt(document.getElementById("vlera1").value);
+    // const op = document.getElementById("operatori").value;
+    // const v2 = parseInt(document.getElementById("vlera2").value);
+
+    // const display = document.getElementById("display");
+
+    // let rezultati = 0;
+
+    // if (op === "+") rezultati = v1 + v2;
+    // else if (op === "-") rezultati = v1 - v2;
+    // else if (op === "*") rezultati = v1 * v2;
+    // else if (op === "/") rezultati = v1 / v2;
+    // else if (op === "%") rezultati = v1 % v2;
+    // else {
+    //   display.textContent = "NUK EGZISTON OPERATORI " + op;
+    //   display.style.color = "red"
+    //   return;
+    // }
+
+    // if (rezultati < 0) rezultati *= (-1);
+    // display.textContent = "Rezultati eshte: " + rezultati; 
+  // }
+
+  const usersDiv = document.getElementById("users");
+  const users = [];
+  
+  class User {
+    constructor(username, password, ngjyra) {
+      this.username = username;
+      this.password = password;
+      this.ngjyra = ngjyra;
+    }
+
+    toString() {
+      return "User with username= " + this.username + "\n";
+    }
+  }
+
+  function signup() {
+    const username = document.getElementById("username").value;
+    const pass1 = document.getElementById("password").value;
+    const pass2 = document.getElementById("confirm-password").value;
+    const ngjyra = document.getElementById("ngjyra").value;
+
+    if (pass1 < 8 || pass1 !== pass2) return;
+
+    for(let i=0;i<users.length;i++) {
+      if (username === users[i].username) {
+        alert("User egziston me username = " + username);
+        return;
+      }
+    }
+
+    const user = new User(username, pass1, ngjyra);
+
+    users.push(user);
+
+    shfaqPerdoruesit();
+
+  }
+
+  function shfaqPerdoruesit() {
+    usersDiv.textContent = "";
+
+    for (let i=0;i<users.length;i++) {
+
+      const p = document.createElement("p");
+
+      p.textContent = users[i].toString();
+      p.style.color = users[i].ngjyra;
+      
+      usersDiv.appendChild(p);
+    }
+  }
+
+</script>
+</html>
