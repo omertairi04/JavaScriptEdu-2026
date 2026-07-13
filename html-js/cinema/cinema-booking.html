@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      text-align: center;
+      padding: 20px;
+      width: 70%;
+      margin: 0 auto;
+    }
+
+    #seats {
+      display: grid;
+      grid-template-columns: repeat(5, 60px);
+      grid-template-rows: repeat(3);
+      gap: 10px;
+      justify-content: center;
+    }
+
+    #seats button {
+      width: 60px;
+      height: 60px;
+      background: lightgreen;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    #seats button:hover {
+      background-color: green;
+    }
+  </style>
+  <body>
+    <h1>Cinema Ticket Booking</h1>
+    <p>Balance: $<span id="balance"></span></p>
+    <button onclick="shtoPare()">+5</button>
+    <div id="seats">
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
