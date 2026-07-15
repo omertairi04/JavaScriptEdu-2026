@@ -16,7 +16,6 @@ for (let i = 0; i < 15; i++) {
       alert("Nuk ki pare!");
       return;
     }
-    
 
     balance -= lv;
     bln.innerText = balance;
