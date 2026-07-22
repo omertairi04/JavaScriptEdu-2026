@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="body">
+    <input type="text" id="emri" placeholder="emri" />
+    <input type="text" id="mbiemri" placeholder="mbiemri" />
+    <input type="text" id="ngjyra" placeholder="ngjyra" />
+    <button onclick="change()">Krijo Perdorues</button>
+    <p id="welcome-msg"></p>
+    <h2 style="margin-top: 30px">Gjith Perdoruesit</h2>
+    <button onclick="shfaqPerdoruesit()">Shfaq perdoruesit</button>
+    <button onclick="mbyll()">Mbyll perdoruesit</button>
+    <div id="userat"></div>
+  </body>
+  <script>
+    const body = document.getElementById("body");
+    const p = document.getElementById("welcome-msg");
+    let perdouresit = [];
+
+    function User(emri, mbiemri, ngjyra) {
+      this.emri = emri;
+      this.mbiemri = mbiemri;
+      this.ngjyra = ngjyra;
+
+      this.toString = function () {
+        return this.emri + " " + this.mbiemri;
+      };
+    }
+
+    function shfaqPerdoruesit() {
+      const userat = document.getElementById("userat");
+      userat.textContent = "";
+
+      for (let i = 0; i < perdouresit.length; i++) {
+        const userDiv = document.createElement("div");
+        userDiv.style.display = "flex";
+        userDiv.style.textAlign = "center";
+
+        const button = document.createElement("button");
+        button.textContent = "Fshij User";
+        button.style.height = "20px";
+        button.style.marginTop = "20px";
+        button.style.marginLeft = "30px";
+
+        button.onclick = () => fshijUser(perdouresit[i]);
+        const paragraf = document.createElement("p");
+
+        paragraf.textContent = perdouresit[i].toString();
+        paragraf.style.color = perdouresit[i].ngjyra;
+
+        userDiv.append(paragraf);
+        userDiv.append(button);
+
+        userat.append(userDiv);
+      }
+    }
+
+    function mbyll() {
+      const userat = document.getElementById("userat");
+      userat.textContent = "";
+    }
+
+    function fshijUser(perdorusi) {
+      let newArray = [];
+
+      for (let i = 0; i < perdouresit.length; i++) {
+        if (
+          perdouresit[i].emri === perdorusi.emri &&
+          perdouresit[i].mbiemri === perdorusi.mbiemri
+        ) {
+          // DO NOTHING
+        } else {
+          newArray.push(perdouresit[i]);
+        }
+      }
+
+      perdouresit = newArray;
+
+      shfaqPerdoruesit();
+    }
+
+    function change() {
+      p.textContent = "";
+      const emri = document.getElementById("emri").value;
+      const mbiemri = document.getElementById("mbiemri").value;
+      const ngjyra = document.getElementById("ngjyra").value;
+
+      if (emri === "" || mbiemri === "") {
+        return;
+      }
+
+      const obj = new User(emri, mbiemri, ngjyra);
+      perdouresit.push(obj);
+      // shfaqPerdoruesit();
+      p.style.color = ngjyra;
+      p.textContent = "Welcome " + emri + " " + mbiemri;
+    }
+  </script>
+</html>

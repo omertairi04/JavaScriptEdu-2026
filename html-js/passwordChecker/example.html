@@ -5,7 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
-    <h1>Succesfully logged in</h1>
+  <body id="body">
+    <h1 id="titull">Succesfully logged in</h1>
+    <input type="text" id="usernameInput" placeholder="username" />
+    <button onclick="welcome()">Vendos Emrin</button>
   </body>
+  <script>
+    
+    const body = document.getElementById("body");
+    const h2 = document.createElement("h2");
+
+    // const titull = document.getElementById("titull");
+    // titull.textContent = "Welcome";
+    // titull.style.color = "blue";
+
+    // const newP = document.createElement("p");
+    // newP.textContent = "Paragrafi nga JS";
+    // body.append(newP);
+
+    function welcome() {
+      h2.textContent = "";
+      const input = document.getElementById("usernameInput").value;
+
+      h2.textContent = "Welcome " + input;
+      body.append(h2);
+    }
+  </script>
 </html>
